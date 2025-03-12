@@ -1,0 +1,23 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db  
+      DB_USER: root
+      DB_PASSWORD: 91491026
+      DB_NAME: kirana_club
+
+  db:
+    image: mysql:9.2.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 91491026
+      MYSQL_DATABASE: kirana_club
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 91491026
+    ports:
+      - "3306:3306"

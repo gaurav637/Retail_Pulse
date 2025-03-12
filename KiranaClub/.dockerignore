@@ -1,0 +1,7 @@
+# Ignore the Go build cache and modules cache
+/bin
+/pkg
+/.git
+/.idea
+*.log
+*.out
