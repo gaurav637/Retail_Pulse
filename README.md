@@ -44,6 +44,14 @@ To set up the project paste the follwing commands in your terminal:
   ``` 
   http://localhost:3000
  ```
+## Docker Setup 
+
+- Build Docker Image
+   ```docker build -t kiranaclub .```
+- Run the Container
+   ```docker run -d -p 3000:3000 --name my-container kiranaclub ```
+- docker ps
+   ```docker ps ```   
 
 
 ## Features 
