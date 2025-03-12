@@ -82,26 +82,52 @@ Ensure the following are installed on your system:
      - Request Body:
 ```       
        
-       {
-          "count": 2,
-          "visits": [
-                {
-                  "store_id": "S00339218",
-                  "image_url": [
-                    "https://www.gstatic.com/webp/gallery/2.jpg",
-                    "https://www.gstatic.com/webp/gallery/3.jpg"
-                         ],
-                  "visit_time": "2025-03-11"
-                }
-           ]
-       }
+    {
+       "count": 2,
+       "visits": [
+             {
+               "store_id": "S00339218",
+               "image_url": [
+                 "https://www.gstatic.com/webp/gallery/2.jpg",
+                 "https://www.gstatic.com/webp/gallery/3.jpg"
+                      ],
+               "visit_time": "2025-03-11"
+             }
+        ]
+    }
 ````
 -  Response: 201 Created: 
 ```
-job id 
+   {
+       "JobId": "3cb85710-e47f-46d7-83dc-cd124d963a55",
+       "code": 201,
+       "message": "Job inserted successfully"
+   }
 ````
 Get Job Status
-URL: GET /api/status/job?id=
+ - URL: GET ```/api/status/job?id=3cb85710-e47f-46d7-83dc-cd124d963a55```
+ - Response:
+   
+   ```
+   {
+       "code": 200,
+       "data": {
+           "id": "3cb85710-e47f-46d7-83dc-cd124d963a55",
+           "created_at": "2025-03-12T05:02:35Z",
+           "updated_at": "2025-03-12T10:32:36Z",
+           "processing_status": "completed"
+       },
+       "message": "Job retrieved successfully"
+   }
+   ````
+   - Id not Present:
+  ```
+   {
+       "code": 404,
+       "data": null,
+       "message": "Job not found"
+   }
+  ````
 
 ## Development Tools
 - IDEs: VS Code, GoLand, IntelliJ
@@ -109,6 +135,10 @@ URL: GET /api/status/job?id=
 - Postman
 - Draw.io
 - Docker Desktop (for logs)
+
+## ER Diagram:-
+
+<img width="636" alt="Screenshot 2025-03-12 at 10 04 52 AM" src="https://github.com/user-attachments/assets/2c9e2ed2-7f37-4da6-8bc5-a34b357f37ca" />
 
 
 ## Future Improvements:- 
